@@ -1,0 +1,86 @@
+{
+    "id": "graph_example_123",
+    "name": "Example Graph Template",
+    "description": "Use this as a template to create your own graph. Replace the data below with your own nodes and connections.",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "updatedAt": "2024-01-15T10:00:00.000Z",
+    "archetypes": [
+        {
+            "id": "arch1",
+            "name": "Category A",
+            "color": "#4A90E2",
+            "description": "Description of what this category represents"
+        },
+        {
+            "id": "arch2",
+            "name": "Category B",
+            "color": "#E85D75",
+            "description": "Another category description"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "P001",
+            "name": "First Node",
+            "segment": "Technology",
+            "archetype": [
+                "arch1"
+            ],
+            "color": "#4A90E2",
+            "description": "This is the first example node",
+            "market_size": "$10M revenue",
+            "business_model": "SaaS subscription",
+            "outbound": [
+                "P002"
+            ],
+            "inbound": []
+        },
+        {
+            "id": "P002",
+            "name": "Second Node",
+            "segment": "Services",
+            "archetype": [
+                "arch2"
+            ],
+            "color": "#E85D75",
+            "description": "This is the second example node",
+            "market_size": "$5M revenue",
+            "business_model": "Consulting fees",
+            "outbound": [
+                "P003"
+            ],
+            "inbound": [
+                "P001"
+            ]
+        },
+        {
+            "id": "P003",
+            "name": "Third Node",
+            "segment": "Technology",
+            "archetype": [
+                "arch1",
+                "arch2"
+            ],
+            "color": "#4A90E2",
+            "description": "This node has multiple archetypes",
+            "market_size": "$15M revenue",
+            "business_model": "Product sales + Services",
+            "outbound": [],
+            "inbound": [
+                "P002"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "source": "P001",
+            "target": "P002",
+            "type": "outbound"
+        },
+        {
+            "source": "P002",
+            "target": "P003",
+            "type": "outbound"
+        }
+    ]
+}
